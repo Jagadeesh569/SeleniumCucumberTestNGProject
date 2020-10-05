@@ -1,8 +1,12 @@
 package stepDefinations;
 
+import java.net.URL;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.*;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -19,9 +23,10 @@ public class StepDefinations {
 	public void i_am_on_the_login_page() throws Throwable {
 
 		try {
-			System.setProperty("webdriver.chrome.driver", "com/resources/drivers/chromedriver.exe");
-			driver = new ChromeDriver();
-			Thread.sleep(3000);
+			//System.setProperty("webdriver.chrome.driver", "com/resources/drivers/chromedriver.exe");
+			//driver = new ChromeDriver();
+			ChromeOptions chromeOptions = new ChromeOptions();
+			driver = new RemoteWebDriver(new URL("http://13.232.47.152:4444/wd/hub"),chromeOptions);
 			driver.navigate().to(appURL);
 		} catch (Exception e) {
 			System.out.println("catch " + e);
