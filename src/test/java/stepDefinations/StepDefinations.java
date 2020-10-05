@@ -26,7 +26,7 @@ public class StepDefinations {
 			//System.setProperty("webdriver.chrome.driver", "com/resources/drivers/chromedriver.exe");
 			//driver = new ChromeDriver();
 			ChromeOptions chromeOptions = new ChromeOptions();
-			driver = new RemoteWebDriver(new URL("http://13.232.47.152:4444/wd/hub"),chromeOptions);
+			driver = new RemoteWebDriver(new URL("http://52.66.253.126:4444/wd/hub"),chromeOptions);
 			driver.navigate().to(appURL);
 		} catch (Exception e) {
 			System.out.println("catch " + e);
